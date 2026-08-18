@@ -1,0 +1,72 @@
+# baseURL: 'https://ubaid-ansari21.github.io/nextinn/'
+baseURL: 'http://localhost:1313'
+locale: 'en-us'
+title: 'nextinn'
+theme: "tella"
+
+params:
+  showBlog: true
+  mainSections: ['blog']
+  googleFonts: true
+  logo:
+    main: "img/logo/logo.png"
+    size: "h-14"
+    bootstrap: true
+  share:
+    enable: true
+    services: 
+      - twitter
+      - linkedin
+      - facebook
+  icon:
+    bootstrap: true
+
+
+security:
+  exec:
+    allow:
+      - ^node$
+      - ^tailwindcss$
+
+menu:
+  main:
+  - identifier: "blog"
+    name: "Blog"
+    url: "/blog/"
+    weight: 2
+
+  - identifier: "about"
+    name: "About"
+    url: "/about/"
+    weight: 3
+
+  - identifier: "contact"
+    name: "Contact"
+    url: "/contact/"
+    weight: 4
+
+  # Footer Menu
+  - name: "Home"
+    url: "/"
+    weight: 1
+
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+
+build:
+  buildStats:
+    enable: true
+  cachebusters:
+    source: 'assets/notwatching/hugo_stats\.json'
+    target: 'css'
+
+module:
+  - mounts:
+      source: 'assets'
+      target: 'assets'
+  - mounts:
+      disableWatch: true
+      source: 'hugo_stats.json'
+      target: 'assets/notwatching/hugo_stats.json'
