@@ -1,5 +1,4 @@
-# baseURL: 'https://ubaid-ansari21.github.io/nextinn/'
-baseURL: 'http://localhost:1313'
+baseURL: 'https://ubaid-ansari21.github.io/nextinn/'
 locale: 'en-us'
 title: 'nextinn'
 theme: "tella"

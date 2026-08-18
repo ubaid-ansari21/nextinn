@@ -9,7 +9,7 @@
 
 {{ if .Params.image }}
 {{ with .Params.image }}
-<meta property="og:image" content="{{ . | absURL }}">
+<meta property="og:image" content="{{ . | strings.TrimPrefix "/" | absURL }}">
 {{ end }}
 {{ else }}
 <meta property="og:image" content="{{ .Site.Params.homepage_meta_tags.meta_og_image | absURL }}">

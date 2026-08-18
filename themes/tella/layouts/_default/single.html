@@ -9,7 +9,7 @@
 
 {{ if .Params.image }}
 {{ with .Params.image }}
-<meta property="og:image" content="{{ . | absURL }}">
+<meta property="og:image" content="{{ . | strings.TrimPrefix "/" | absURL }}">
 {{ end }}
 {{ else }}
 <meta property="og:image" content="{{ .Site.Params.homepage_meta_tags.meta_og_image | absURL }}">
@@ -37,7 +37,7 @@
     <header class="mb-8 text-center md:text-left">
         {{ with .Params.image }}
         <div class="rounded-xl overflow-hidden mb-8 aspect-video w-full shadow-md">
-            <img src="{{ . | absURL }}" alt="{{ $.Title }}" class="w-full h-full object-cover">
+            <img src="{{ . | strings.TrimPrefix "/" | absURL }}" alt="{{ $.Title }}" class="w-full h-full object-cover">
         </div>
         {{ end }}
         <h1 class="text-3xl md:text-5xl font-extrabold text-tlgray-800 mb-6 leading-tight">{{.Title}}</h1>
