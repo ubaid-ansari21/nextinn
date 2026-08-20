@@ -1,25 +1,49 @@
-<div class="splide" role="group" aria-label="Top Page Slides">
+<div class="splide top-page-slider" role="group" aria-label="Top Page Slides">
     <div class="splide__track">
         <ul class="splide__list">
+
             {{ if ge hugo.Version "0.156.0" }}
+
                 {{ range hugo.Data.slide }}
                 <li class="splide__slide">
-                    <img src="{{ .image | strings.TrimPrefix "/" | relURL }}" alt="{{ .alt }}">
+                    <img
+                        class="top-slide-image"
+                        src="{{ .image | strings.TrimPrefix "/" | relURL }}"
+                        alt="{{ .alt }}"
+                        width="1920"
+                        height="1080"
+                    >
+
                     <div class="s-fade-txt">
-                        <h1 class="text-4xl font-medium {{ or .color "text-white" }}">{{ .title }}</h1>
+                        <h1 class="text-4xl font-medium {{ or .color "text-white" }}">
+                            {{ .title }}
+                        </h1>
                     </div>
                 </li>
                 {{ end }}
+
             {{ else }}
+
                 {{ range .Site.Data.slide }}
                 <li class="splide__slide">
-                    <img src="{{ .image | strings.TrimPrefix "/" | relURL }}" alt="{{ .alt }}">
+                    <img
+                        class="top-slide-image"
+                        src="{{ .image | strings.TrimPrefix "/" | relURL }}"
+                        alt="{{ .alt }}"
+                        width="1920"
+                        height="1080"
+                    >
+
                     <div class="s-fade-txt">
-                        <h1 class="text-4xl font-medium {{ or .color "text-white" }}">{{ .title }}</h1>
+                        <h1 class="text-4xl font-medium {{ or .color "text-white" }}">
+                            {{ .title }}
+                        </h1>
                     </div>
                 </li>
                 {{ end }}
+
             {{ end }}
+
         </ul>
     </div>
 </div>
