@@ -36,7 +36,7 @@
 
 /* Responsive slide title */
 .top-page-slider .slide-title {
-    font-size: clamp(24px, 3.75cqw, 48px) !important;
+    font-size: clamp(18px, 2.5cqw, 48px) !important;
     line-height: 1.15 !important;
     white-space: nowrap !important;
 }
